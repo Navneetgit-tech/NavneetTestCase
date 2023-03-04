@@ -5,42 +5,55 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pom_files.QuantityVerifyPom;
 
 public class quantityVerify {
 	WebDriver driver;
+	WebDriverWait wait;
+	public QuantityVerifyPom qv;
 	@Given("quantity displayed")
-	public void quantity_displayed() throws InterruptedException {
+	public void quantity_displayed(){
 	driver=new ChromeDriver();
 	driver.manage().window().maximize();
-	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
+	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
+	driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
 	driver.get("https://react-shopping-cart-67954.firebaseapp.com/");
-	Thread.sleep(5000);
-	//Fetches Product Count Displayed
-	String Number=driver.findElement(By.xpath("(//p[text()])[2]")).getText();
-	//Fetches Integer number from String
-	System.out.println("Product Found "+Number.replaceAll("[^0-9]", ""));
-	//Fetches List Count of Products Displayed
-	List<WebElement> productCount=driver.findElements(By.xpath("//div[@tabindex=\"1\"]"));
-	//Displays Count in Console
-	System.out.println("Number of Products found :"+productCount.size());
-	}
-
-	@When("quantity is same as displayed products")
-	public void quantity_is_same_as_displayed_products() throws InterruptedException {
-	//clicks on Size S
-    driver.findElement(By.xpath("(//span[@class=\"checkmark\"])[2]")).click();
-    Thread.sleep(5000);
-    //Fetches Product Count Displayed for size S and stores in variable Number2
-    String Number2=driver.findElement(By.xpath("(//p[text()])[2]")).getText();
-    System.out.println("Product found "+Number2.replaceAll("[^0-9]", ""));
-    List<WebElement> productCount2=driver.findElements(By.xpath("//div[@tabindex=\"1\"]"));
-	System.out.println("Number of Products found for Size S :"+productCount2.size());
 	
 	}
+	@Then("fetch product count")
+	public void fetch_product_count() {
+		wait=new WebDriverWait(driver,Duration.ofSeconds(5));
+		wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//main[@class='sc-ebmerl-4 iliWeY']/p[text()='16']")));
+		//Fetches Product Count Displayed
+		qv=new QuantityVerifyPom(driver);
+		qv.Product_count();
+//		String Number=driver.findElement(By.xpath("(//p[text()])[2]")).getText();
+		
+	}
+	@Then ("Convert String to Integer")
+	public void Convert_String_to_Integer() {
+		
+	//Fetches Integer number from String
+		qv.Fetch_integer();
+//	System.out.println("Product Found "+Number.replaceAll("[^0-9]", ""));
+	}
+	@When("quantity is same as displayed products")
+	public void quantity_is_same_as_displayed_products() {
+	//Fetches List Count of Products Displayed
+		qv.Cloth_count();
+		qv.Display_Cloth_count();
+//	List<WebElement> productCount=driver.findElements(By.xpath("//div[@tabindex=\"1\"]"));
+//	//Displays Count in Console
+//	System.out.println("Number of Products found :"+productCount.size());
+	}
+
+	
 
 	@Then("Product Quantity matches")
 	public void Product_Quantity_matches() {

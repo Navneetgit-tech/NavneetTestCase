@@ -5,14 +5,19 @@ import java.time.Duration;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import pom_files.githubLogin;
+import pom_files.starcount;
 
 public class StarCount {
-
+ public starcount start;
 
 WebDriver driver;
 	@Given("user is on web page")
@@ -26,43 +31,44 @@ WebDriver driver;
 
 	@When("user clicks on star")
 	public void user_enters_username_and_password() {
-		driver.findElement(By.xpath("//a[@class=\"github-button\"]")).click();
-		driver.findElement(By.xpath("(//a[@href=\"/login?return_to=%2FjeffersonRibeiro%2Freact-shopping-cart\"])[3]")).click();
+		start = new starcount(driver);
+		start.star_click();
+		
 	}
 
 	@And("fills the github login page")
-	public void clicks_on_login_button() throws InterruptedException {
+	public void clicks_on_login_button()  {
 		System.out.println("Inside Step - User is clicking on login button");
-		//System.out.println("Previous Star Count is"+driver.findElement(By.xpath("(//span[@title=\"2,179\"])[1]")).getTagName());
 
 		githubLogin git=new githubLogin(driver);
-		git.GitHubLogin();
-	
-		//navigate to star count
-		driver.findElement(By.xpath("(//a[@class=\"Link--muted\"])[2]")).click();
+		git.GitHubUsername();
+		git.GitHubPassword();
+		git.GitHubSignIn();
+	}
+	@Then("fetches star count")
+	public void fetches_star_count() throws InterruptedException{
+		WebDriverWait w=new WebDriverWait(driver,Duration.ofSeconds(5));
 
-		//fetches star count before clicking star
-		System.out.println("Star Count was "+driver.findElement(By.xpath("//*[@id=\"repos\"]/div[2]/nav/a[1]/span")).getText());
-	
-		//clicks star button
-		driver.findElement(By.xpath("//button/span[@id=\"repo-stars-counter-star\"]")).click();
-		Thread.sleep(1000);
+		start.star_count();//navigate to star count
 		
-		//refreshes page
-		driver.navigate().refresh();
+		start.old_count();//fetches star count before clicking star
 		
-		//fetches count of star after clicking star
-		Thread.sleep(1000);
-		//WebElement starResult=new Web
-		System.out.println("Star Count is "+driver.findElement(By.xpath("//*[@id=\"repos\"]/div[2]/nav/a[1]/span")).getText());
-		driver.findElement(By.xpath("//button[@class=\"rounded-left-2 btn-sm btn BtnGroup-item\"]")).click();
+		start.star_button();//clicks star button
+		
+		w.until(ExpectedConditions.refreshed(ExpectedConditions.elementToBeClickable(By.xpath("//*[@id='repos']/div[2]/nav/a[1]/span"))));
+
+		driver.navigate().refresh();//refreshes page
+		
+		
+		start.new_count();//fetches count of star after clicking star
+		
+		start.de_select_star();//de-selects star button
 
 		
 	}
 
 	@Then("user is navigated to the home page")
 	public void user_is_navigated_to_the_home_page() {
-		System.out.println("Inside Step - User is navigated to home page");
-		driver.get("https://react-shopping-cart-67954.firebaseapp.com/");
+		start.back_to_web_page();
 	}
 }

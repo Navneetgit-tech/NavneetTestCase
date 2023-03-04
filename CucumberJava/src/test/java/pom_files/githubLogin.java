@@ -1,4 +1,4 @@
-package StepDefinition;
+package pom_files;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -12,10 +12,13 @@ public class githubLogin {
    By password=By.xpath("//input[@id=\"password\"]");
    By signin=By.xpath("//input[@class=\"btn btn-primary btn-block js-sign-in-button\"]");
    
-   public void GitHubLogin() {
-	   driver.findElement(username).sendKeys("bandikattenavneet@gmail.com");
+   public void GitHubUsername() {
+	   driver.findElement(username).sendKeys("Navneetgit-tech");	   
+   }
+   public void GitHubPassword() {
 	   driver.findElement(password).sendKeys("Spidyn@vb763");
+   }
+   public void GitHubSignIn() {
 	   driver.findElement(signin).click();
-	   //driver.get("https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox");
    }
 }
