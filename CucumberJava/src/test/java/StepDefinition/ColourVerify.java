@@ -12,23 +12,23 @@ import org.openqa.selenium.support.Color;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pom_files.colorVerify;
+import pages.ColorVerifyPage;
 
-public class colourVerify {
+public class ColourVerify {
 WebDriver driver;
-colorVerify colors;
-	@Given("user is on Add to cart webpage")
-	public void user_is_on_Add_to_cart_webpage() {
+ColorVerifyPage colors;
+@Given("user is on Add to cart webpage URL {string}")
+	public void user_is_on_Add_to_cart_webpage(String url) {
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
-		driver.get("https://react-shopping-cart-67954.firebaseapp.com/");
+		driver.get(url);
 	   
 	}
 	@When("user hovers over Checkout button")
 	public void user_hovers_over_checkout_button(){
-		colors=new colorVerify(driver);
+		colors=new ColorVerifyPage(driver);
 		colors.buttonColor();  
 	}
 

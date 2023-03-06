@@ -1,11 +1,11 @@
-package pom_files;
+package pages;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class githubLogin {
+public class GithubLoginPage {
 	WebDriver driver;
-   public githubLogin(WebDriver driver){
+   public GithubLoginPage(WebDriver driver){
 	this.driver=driver;
 }
    By username=By.xpath("//input[@id=\"login_field\"]");

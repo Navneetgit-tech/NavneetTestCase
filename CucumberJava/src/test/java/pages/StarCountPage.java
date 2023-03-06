@@ -1,6 +1,4 @@
-package pom_files;
-
-import java.time.Duration;
+package pages;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,10 +8,10 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
 import org.openqa.selenium.support.PageFactory;
 
-public class starcount {
+public class StarCountPage {
 	
 	WebDriver driver;
-	public starcount(WebDriver driver) {
+	public StarCountPage(WebDriver driver) {
 		this.driver=driver;
 		PageFactory.initElements(driver,this);
 	}
@@ -65,14 +63,19 @@ public void old_count() {
 }
 public void star_button() {
 	starbutton.click();
+	
+
 }
 public void new_count() {
+
 	System.out.println("Star Count after giving rating: "+newcount.getText());
 }
 public void de_select_star() {
+
 	deselectstar.click();
 }
 public void back_to_web_page() {
+	
 	driver.get("https://react-shopping-cart-67954.firebaseapp.com/");
 }
 

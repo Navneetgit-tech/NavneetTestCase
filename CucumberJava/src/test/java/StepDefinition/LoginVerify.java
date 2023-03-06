@@ -9,30 +9,30 @@ import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
-import pom_files.githubLogin;
-import pom_files.starcount;
+import pages.GithubLoginPage;
+import pages.StarCountPage;
 
-public class loginverify {
-	public starcount start1;
+public class LoginVerify {
+	public StarCountPage start1;
 	WebDriver driver;
-	@Given("user is on cart site")
-	public void user_is_on_cart_site() {
+	@Given("user is on cart site {string}")
+	public void user_is_on_cart_site(String url) {
 		driver= new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
-		driver.get("https://react-shopping-cart-67954.firebaseapp.com/");
+		driver.get(url);
 	}
 
 	@When("user clicks on star button")
 	public void user_clicks_on_star_button() {
-		start1 = new starcount(driver);
+		start1 = new StarCountPage(driver);
 		start1.star_click();
 //		start1.SIGNIN();
 	}
-	githubLogin git;
+	GithubLoginPage git;
 	@Then("user is redirected to login page")
 	public void user_is_redirected_to_login_page() {
-		git=new githubLogin(driver);
+		git=new GithubLoginPage(driver);
 		git.GitHubUsername();
 	}
 

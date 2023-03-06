@@ -1,5 +1,6 @@
-package pom_files;
+package pages;
 
+import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
@@ -8,10 +9,12 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.CacheLookup;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
-public class sSizeQuantity {
+public class SizeSQuantityPage {
 WebDriver driver;
-public sSizeQuantity(WebDriver driver) {
+public SizeSQuantityPage(WebDriver driver) {
 	this.driver=driver;
 	PageFactory.initElements(driver,this);
 
@@ -21,6 +24,9 @@ By P_Count=By.xpath("(//p[text()])[2]");
 @FindBy(xpath="//div[@tabindex='1']")
 @CacheLookup
 List<WebElement> P_Disp;
+@FindBy(xpath="//main[@class='sc-ebmerl-4 iliWeY']/p[text()='2']")
+@CacheLookup
+WebElement ProdCount;
 
 
 
@@ -29,6 +35,9 @@ public void click_S_Size() {
 	driver.findElement(S_Size).click();;
 }
 public void product_COunt() {
+	WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(5));
+	wait.until(ExpectedConditions.visibilityOfAllElements(ProdCount));
+	
 	Number2=driver.findElement(P_Count).getText();
 }
 public void convert_To_String() {

@@ -7,23 +7,23 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import pom_files.Free_Shipping;
+import pages.FreeShippingPage;
 
-public class freeShipping {
+public class FreeShipping {
 	WebDriver driver;
-	Free_Shipping fs;
-	@Given("user is on shopping cart")
-	public void user_is_on_shopping_cart() {
+	FreeShippingPage fs;
+	@Given("user is on shopping cart URL {string}")
+	public void user_is_on_shopping_cart(String url) {
 		driver=new ChromeDriver();
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(5));
 		driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(5));
-		driver.get("https://react-shopping-cart-67954.firebaseapp.com/");
+		driver.get(url);
 	}
 
 	@Then("check if free shipping is displayed for Off White TSHirt")
 	public void check_if_free_shipping_is_displayed_for_the_product() {
-		fs=new Free_Shipping(driver);
+		fs=new FreeShippingPage(driver);
 	    fs.FreeShip();
 	}
 	@Then("check if free shipping is diplayed for Skater Black Sweatshirt")

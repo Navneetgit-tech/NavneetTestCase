@@ -1,4 +1,4 @@
-package pom_files;
+package pages;
 
 import java.util.List;
 
@@ -11,9 +11,9 @@ import org.openqa.selenium.support.PageFactory;
 
 import junit.framework.Assert;
 
-public class Free_Shipping {
+public class FreeShippingPage {
 WebDriver driver;
-public Free_Shipping(WebDriver driver) {
+public FreeShippingPage(WebDriver driver) {
 	this.driver=driver;
 	PageFactory.initElements(driver,this);
 }

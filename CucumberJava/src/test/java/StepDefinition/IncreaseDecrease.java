@@ -8,23 +8,23 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
-import pom_files.Increase_Decrease;
+import pages.IncreaseDecreasePage;
 
-public class increase_Decrease {
+public class IncreaseDecrease {
 WebDriver driver;
-Increase_Decrease incdec;
+IncreaseDecreasePage incdec;
 
-@Given("user opens main webpage")
-public void user_opens_main_webpage() {
+@Given("user opens main webpage {string}")
+public void user_opens_main_webpage(String url) {
 	driver= new ChromeDriver();
 	driver.manage().window().maximize();
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
-	driver.get("https://react-shopping-cart-67954.firebaseapp.com/");
+	driver.get(url);
 }
 
 @Then("user clicks on add to cart to purchase white TShirt")
 public void user_clicks_on_add_to_cart_to_purchase_white_t_shirt() {
-    incdec=new Increase_Decrease(driver);
+    incdec=new IncreaseDecreasePage(driver);
     incdec.whiteTSHirt();
 }
 
