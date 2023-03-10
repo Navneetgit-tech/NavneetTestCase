@@ -8,6 +8,7 @@ Feature: feature to test React Shopping WebSite functionality
     And fills the github login page
     Then fetches star count
     Then user is navigated to the home page
+                                           
     
   @GitHubLoginVerify
  	Scenario: Check if github is taking login credentials through react shopping cart Site
@@ -18,12 +19,15 @@ Feature: feature to test React Shopping WebSite functionality
 		Then user is logged into github
 		
   @Quantity  
-  Scenario: Check quantity display matches with available products
+  Scenario Outline: Check quantity display matches with available products
   	Given quantity displayed on "https://react-shopping-cart-67954.firebaseapp.com/" webpage
   	Then fetch product count
   	Then Convert String to Integer
   	When quantity is same as displayed products
-  	Then Product Quantity matches
+  	Then Product Quantity matches "<value>"
+  	Examples:
+  	|value|
+  	|16  |
   @SsizeQuantity	
 	Scenario: Check quantity displayed for Size S matches with available products
 		Given Clicks on size S displayed on "https://react-shopping-cart-67954.firebaseapp.com/" webpage
@@ -59,7 +63,7 @@ Feature: feature to test React Shopping WebSite functionality
 	  Given user is on shopping cart URL "https://react-shopping-cart-67954.firebaseapp.com/"
 	  Then check if free shipping is displayed for Off White TSHirt
 	  Then check if free shipping is diplayed for Skater Black Sweatshirt
-	  Then fetch the count of product eligible for fress shipping
+	  Then fetch the count of product eligible for free shipping
 				
 		
 		

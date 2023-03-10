@@ -2,15 +2,19 @@ package StepDefinition;
 import java.time.Duration;
 import java.util.List;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import junit.framework.Assert;
 import pages.QuantityVerifyPage;
 
 public class QuantityVerify {
@@ -25,29 +29,33 @@ public class QuantityVerify {
 		driver.get(url);
 
 	}
+	@SuppressWarnings("deprecation")
 	@Then("fetch product count")
-	public void fetch_product_count() {
-
+	public void fetchProductCount() {
+		String pro="16 Product(s) found";
 		//Fetches Product Count Displayed
 		qv=new QuantityVerifyPage(driver);
-		qv.Product_count();
+		qv.productCount();
+		Assert.assertEquals(pro, qv.productCountAssert());
 
 	}
 	@Then ("Convert String to Integer")
-	public void Convert_String_to_Integer() {
+	public void convertStringToInteger() {
 
 		//Fetches Integer number from String
-		qv.Fetch_integer();
+		qv.fetchInteger();
 	}
 	@When("quantity is same as displayed products")
-	public void quantity_is_same_as_displayed_products() {
+	public void quantityIsSameAsDisplayedProducts() {
 		//Fetches List Count of Products Displayed
-		qv.Cloth_count();
-		qv.Display_Cloth_count();
+		qv.clothCount();
+		qv.displayClothCount();
 
 	}
-	@Then("Product Quantity matches")
-	public void Product_Quantity_matches() {
-
+	@SuppressWarnings("deprecation")
+	@Then("Product Quantity matches {string}")
+	public void Product_Quantity_matches(String n) {
+		Assert.assertEquals(n, qv.displayClothCountAssert());
 	}
+	
 }

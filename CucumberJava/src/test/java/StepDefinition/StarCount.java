@@ -3,11 +3,14 @@ package StepDefinition;
 import java.time.Duration;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -29,23 +32,23 @@ public class StarCount {
 	}
 
 	@When("user clicks on star")
-	public void user_enters_username_and_password() {
+	public void userEntersUsernameAndPassword() {
 		start = new StarCountPage(driver);
 		start.star_click();
 
 	}
 
 	@And("fills the github login page")
-	public void clicks_on_login_button()  {
+	public void clicksOnLoginButton()  {
 		System.out.println("Inside Step - User is clicking on login button");
 
 		GithubLoginPage git=new GithubLoginPage(driver);
-		git.GitHubUsername();
-		git.GitHubPassword();
-		git.GitHubSignIn();
+		git.gitHubUsername();
+		git.gitHubPassword();
+		git.gitHubSignIn();
 	}
 	@Then("fetches star count")
-	public void fetches_star_count() throws InterruptedException{
+	public void fetchesStarCount() throws InterruptedException{
 		WebDriverWait w=new WebDriverWait(driver,Duration.ofSeconds(10));
 
 		start.star_count();//navigate to star count
@@ -67,7 +70,8 @@ public class StarCount {
 	}
 
 	@Then("user is navigated to the home page")
-	public void user_is_navigated_to_the_home_page() {
+	public void userIsNavigatedToTheHomePage() {
 		start.back_to_web_page();
 	}
+	
 }

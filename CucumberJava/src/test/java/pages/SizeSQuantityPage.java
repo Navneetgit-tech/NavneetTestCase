@@ -31,25 +31,32 @@ WebElement ProdCount;
 
 
 String Number2;
-public void click_S_Size() {
+public void clickSSize() {
 	driver.findElement(S_Size).click();;
 }
-public void product_COunt() {
+public void productCount() {
 	WebDriverWait wait=new WebDriverWait(driver,Duration.ofSeconds(5));
 	wait.until(ExpectedConditions.visibilityOfAllElements(ProdCount));
 	
 	Number2=driver.findElement(P_Count).getText();
 }
-public void convert_To_String() {
+public void convertToString() {
 	System.out.println("Product found "+Number2.replaceAll("[^0-9]", ""));
 }
 List<WebElement> productCount2;
-public void displayed_Product() {
+public void displayedProduct() {
 	productCount2=P_Disp;
 
 }
-public void  displayed_Product_Count() {
+public void  displayedProductCount() {
 	System.out.println("Number of Image Products found for Size S :"+productCount2.size());
 
 }
+public String productCountAssert() {
+	return Number2;
+}
+public int displayedProductCountAssert() {
+	return productCount2.size();
+}
+
 }

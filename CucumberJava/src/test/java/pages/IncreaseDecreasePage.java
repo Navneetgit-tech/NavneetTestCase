@@ -22,10 +22,10 @@ By Check_out=By.xpath("//button[text()='Checkout']");
 public void whiteTSHirt() {
 	driver.findElement(White_TShirt).click();
 }
-public void add_Product() {
+public void addProduct() {
 	driver.findElement(Add).click();
 }
-public void check_Quantity() {
+public void checkQuantity() {
 	System.out.println("Quantity after clicking add: "+driver.findElement(quantity).getText());
 }
 public void Total_Amount() {
@@ -43,4 +43,5 @@ public void checkOut() {
 public void Alert_Handle() {
 	driver.switchTo().alert().accept();
 }
+
 }

@@ -2,9 +2,12 @@ package StepDefinition;
 
 import java.time.Duration;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -23,36 +26,37 @@ public void user_opens_main_webpage(String url) {
 }
 
 @Then("user clicks on add to cart to purchase white TShirt")
-public void user_clicks_on_add_to_cart_to_purchase_white_t_shirt() {
+public void userClicksOnAddToCartToPurchaseWhiteTShirt() {
     incdec=new IncreaseDecreasePage(driver);
     incdec.whiteTSHirt();
 }
 
 @And("user increase quantity of product")
-public void user_increase_quantity_of_product() {
-    incdec.add_Product();
-    incdec.add_Product();
+public void userIncreaseQuantityOfProduct() {
+    incdec.addProduct();
+    incdec.addProduct();
 }
 
 @Then("fetch count of product")
-public void fetch_count_of_product() {
-    incdec.check_Quantity();
+public void fetchCountOfProduct() {
+    incdec.checkQuantity();
     incdec.Total_Amount();
 }
 
 @Then("user decrease quantity of product")
-public void user_decrease_quantity_of_product() {
+public void userDecreaseQuantityOfProduct() {
     incdec.remove_Product();
     incdec.removed_Quantity();
 }
 
 @Then("user clicks Checkout")
-public void user_clicks_checkout() {
+public void userClicksCheckout() {
     incdec.checkOut();
 }
 
 @Then("user clicks on ok to alert button")
-public void user_clicks_on_ok_to_alert_button() {
+public void userClicksOnOkToAlertButton() {
     incdec.Alert_Handle();
 }
+
 }

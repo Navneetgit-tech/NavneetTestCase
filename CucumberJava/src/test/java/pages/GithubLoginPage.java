@@ -12,13 +12,14 @@ public class GithubLoginPage {
    By password=By.xpath("//input[@id=\"password\"]");
    By signin=By.xpath("//input[@class=\"btn btn-primary btn-block js-sign-in-button\"]");
    
-   public void GitHubUsername() {
+   public void gitHubUsername() {
 	   driver.findElement(username).sendKeys("Navneetgit-tech");	   
    }
-   public void GitHubPassword() {
+   public void gitHubPassword() {
 	   driver.findElement(password).sendKeys("Spidyn@vb763");
    }
-   public void GitHubSignIn() {
+   public void gitHubSignIn() {
 	   driver.findElement(signin).click();
    }
+   
 }

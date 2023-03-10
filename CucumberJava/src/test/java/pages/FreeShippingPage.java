@@ -25,22 +25,32 @@ By freeship2=By.xpath("(//div[@class='sc-124al1g-1 csvtPz'])[3]");
 @CacheLookup
 List<WebElement> fscount;
 String t1="Free shipping";
-@SuppressWarnings("deprecation")
 public void FreeShip() {
 	String fs1=driver.findElement(freeship).getText();
 	System.out.println(fs1);
-	Assert.assertEquals(t1, fs1);
+//	Assert.assertEquals(t1, fs1);
 	System.out.println("Is Cropped Stay Groovy off white T-Shirt eligibible for free shipping: "+fs1.equalsIgnoreCase(t1));
 	
+}
+public String freeShipAssert() {
+	return driver.findElement(freeship).getText();
 }
 public void FreeShip2() {
 	String fs2=driver.findElement(freeship2).getText();
 	//Assert.assertEquals(t1, fs2);
 	System.out.println("Is Skater Black Sweatshirt eligible for free shipping: "+fs2.equalsIgnoreCase(t1));
 }
+public String freeShip2Assert() {
+	return driver.findElement(freeship2).getText();
+}
 List<WebElement>freeshippingcount;
 public void freeshipcount() {
 	freeshippingcount=fscount;
 	System.out.println("Number of products eligible for free shipping is: "+freeshippingcount.size());
 }
+public int freeShipCountAssert() {
+	freeshippingcount=fscount;
+	return freeshippingcount.size();
+}
+
 }

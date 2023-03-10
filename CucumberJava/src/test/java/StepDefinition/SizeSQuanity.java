@@ -4,15 +4,19 @@ import java.time.Duration;
 import java.util.List;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import junit.framework.Assert;
 import pages.SizeSQuantityPage;
 
 public class SizeSQuanity {
@@ -27,28 +31,34 @@ public class SizeSQuanity {
 		driver.get(url);
 		//clicks on Size S
 		ssq=new SizeSQuantityPage(driver);
-		ssq.click_S_Size();	
+		ssq.clickSSize();	
 	}
 	String Number2;
+	@SuppressWarnings("deprecation")
 	@Then("fetch product count displayed for size S")
-	public void fetch_product_count_displayed_for_size_s() {
+	public void fetchProductCountDisplayedForSizeS() {
 
-		ssq.product_COunt();;
+		ssq.productCount();
+		String co="2 Product(s) found";
+		Assert.assertEquals(co, ssq.productCountAssert());;
 	}
 
 	@Then("Convert from String to Integer")
-	public void convert_from_string_to_integer() {
-		 ssq.convert_To_String();
+	public void convertFromStringToInteger() {
+		 ssq.convertToString();
 	}
 
 	@When("quantity equals displayed products")
-	public void quantity_equals_displayed_products() {
-		ssq.displayed_Product();
-		ssq.displayed_Product_Count();
+	public void quantityEqualsDisplayedProducts() {
+		ssq.displayedProduct();
+		ssq.displayedProductCount();
 	}
 
+	@SuppressWarnings("deprecation")
 	@Then("Product Quantity matches for S Size")
-	public void product_quantity_matches_for_s_size() {
-	    
+	public void productQuantityMatchesForSSize() {
+	    int n1=2;
+	    Assert.assertEquals(n1, ssq.displayedProductCountAssert());
 	}
+	
 }

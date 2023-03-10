@@ -2,9 +2,12 @@ package StepDefinition;
 
 import java.time.Duration;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -24,26 +27,27 @@ public class LoginVerify {
 	}
 
 	@When("user clicks on star button")
-	public void user_clicks_on_star_button() {
+	public void userClicksOnStarButton() {
 		start1 = new StarCountPage(driver);
 		start1.star_click();
 //		start1.SIGNIN();
 	}
 	GithubLoginPage git;
 	@Then("user is redirected to login page")
-	public void user_is_redirected_to_login_page() {
+	public void userIsRedirectedToLoginPage() {
 		git=new GithubLoginPage(driver);
-		git.GitHubUsername();
+		git.gitHubUsername();
 	}
 
 	@And("user enters credential")
-	public void user_enters_credential() {
+	public void userEntersCredential() {
 		
-		git.GitHubPassword();
+		git.gitHubPassword();
 	}
 
 	@Then("user is logged into github")
-	public void user_is_logged_into_github() {
-	    git.GitHubSignIn();
+	public void userIsLoggedIntoGithub() {
+	    git.gitHubSignIn();
 	}
+	
 }

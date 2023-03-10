@@ -1,17 +1,21 @@
 package StepDefinition;
 
 import java.time.Duration;
+import org.openqa.selenium.TakesScreenshot;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.Color;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import junit.framework.Assert;
 import pages.ColorVerifyPage;
 
 public class ColourVerify {
@@ -27,16 +31,29 @@ ColorVerifyPage colors;
 	   
 	}
 	@When("user hovers over Checkout button")
-	public void user_hovers_over_checkout_button(){
+	public void userHoversOverCheckoutButton(){
 		colors=new ColorVerifyPage(driver);
 		colors.buttonColor();  
 	}
 
+	@SuppressWarnings("deprecation")
 	@Then("Chekout button turns into amber colour")
-	public void Chekout_button_turns_into_amber_colour()   {
-	
+	public void chekoutButtonTurnsIntoAmberColour()   {
+		String actual="rgba(218, 179, 2, 1)";
 		colors.amberColor();
-		
+		Assert.assertEquals(actual, colors.amberColorAssert());
+	}
+	@After(order=1)
+	public void takeScreenshotOnFailure(io.cucumber.java.Scenario scenario) {
+		if(scenario.isFailed()) {
+			TakesScreenshot ts=(TakesScreenshot) driver;
+			byte[] src=ts.getScreenshotAs(OutputType.BYTES);
+			scenario.attach(src,"image/png","embedded1");
+			
+		}
+	}
+	@After(order=0)
+	public void tearDown() {
 	}
 
 }

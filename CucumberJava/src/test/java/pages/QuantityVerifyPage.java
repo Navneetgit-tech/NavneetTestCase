@@ -29,21 +29,28 @@ WebElement Prodc;
 List<WebElement> Dispc;
 
 String Number;
-public void Product_count() {
+public void productCount() {
 	wait=new WebDriverWait(driver,Duration.ofSeconds(5));
 	wait.until(ExpectedConditions.visibilityOfAllElementsLocatedBy(By.xpath("//main[@class='sc-ebmerl-4 iliWeY']/p[text()='16']")));
 	Number=Prodc.getText();
 }
-public void Fetch_integer() {
+public void fetchInteger() {
 	System.out.println("Product Found "+Number.replaceAll("[^0-9]", ""));
 }
 List<WebElement> productCount;
-public void Cloth_count() {
+public void clothCount() {
 	productCount=Dispc;
 	
 }
-public void Display_Cloth_count() {
+public void displayClothCount() {
 	System.out.println("Number of Image Products found :"+productCount.size());
 }
+public String productCountAssert() {
+		return Number;
+}
+public String displayClothCountAssert() {
+	return Integer.toString(productCount.size())   ;
+}
+
 
 }

@@ -13,10 +13,8 @@ public class ColorVerifyPage {
 WebDriver driver;
 public ColorVerifyPage(WebDriver driver) {
 	this.driver=driver;
-//	PageFactory.initElements(driver, this);
 }
-//@FindBy(how=How.CSS,using="button.sc-124al1g-0")
-//WebElement E;
+
 By button=By.cssSelector("button.sc-124al1g-0");
 String backColor;
 Actions act;
@@ -25,10 +23,16 @@ public void buttonColor() {
 	WebElement E=driver.findElement(button);
 	act.moveToElement(E).perform();
    backColor=E.getCssValue("background-color");
+   
 }
+String hexBackColor;
 public void amberColor() {
 	System.out.println(backColor);
-	String hexBackColor=Color.fromString(backColor).asHex();
+	hexBackColor=Color.fromString(backColor).asHex();
 	System.out.println(hexBackColor);
 }
+public String amberColorAssert() {
+	return backColor;
+}
+
 }

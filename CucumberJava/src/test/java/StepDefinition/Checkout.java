@@ -2,9 +2,12 @@ package StepDefinition;
 
 import java.time.Duration;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
+import io.cucumber.java.After;
 import io.cucumber.java.en.And;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
@@ -22,31 +25,32 @@ public class Checkout {
 		driver.get(url);
 	}
 	@When("user clicks on XL Size")
-	public void user_clicks_on_xl_size() {
+	public void userClicksOnXlSize() {
 		
 		check=new CheckoutPage(driver);
-		check.XL_Size();
+		check.xlSize();
 		
 	}
 
 	@Then("user Clicks on Add to Cart for the cloth of preference")
-	public void user_clicks_on_add_to_cart_for_the_cloth_of_preference() {
-	   check.Off_WHite();
-	   check.Blue_TShirt();
+	public void userClicksOnAddToCartForTheClothOfPreference() {
+	   check.offWhite();
+	   check.blueTShirt();
 	}
 
 	@Then("fetch the cost")
-	public void fetch_the_cost() {
-	    check.Sub_Total();
+	public void fetchTheCost() {
+	    check.subTotal();
 	}
 
 	@And("Click on Checkout")
-	public void click_on_checkout() {
-	    check.CheckOut();
+	public void clickOnCheckout() {
+	    check.checkOut();
 	}
 
 	@Then("Click on Ok on the alert button")
-	public void click_on_ok_on_the_alert_button() {
-	   check.Alert();
+	public void clickOnOkOnTheAlertButton() {
+	   check.alertButton();
 	}
+	
 }
