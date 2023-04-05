@@ -12,7 +12,7 @@ monochrome=true ,plugin= {"pretty","json:target/JSONReports/report.json",
 		"html:target/HtmlReports/index.html",
 		"json:target/cucumber.json",
 		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:"}
-//tags="@Color1"
+//tags="@StarCount"
 //		,tags="@StarCount or @Quantity and not @XL"
 )
 public class TestRunner {

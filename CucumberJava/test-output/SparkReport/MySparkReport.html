@@ -35,7 +35,7 @@
 <a href="#"><span class="badge badge-primary"></span></a>
 </li>
 <li class="m-r-10">
-<a href="#"><span class="badge badge-primary">Mar 10, 2023 04:37:33 pm</span></a>
+<a href="#"><span class="badge badge-primary">Apr 2, 2023 11:51:09 pm</span></a>
 </li>
 </ul>
 </div>
@@ -84,7 +84,7 @@
 <li class="dropdown">
 <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-tag"></i></a>
 <ul id="tag-toggle" class="dropdown-menu dropdown-md p-v-0">
-<a class="dropdown-item" href="#">@Inc</a><a class="dropdown-item" href="#">@StarCount</a><a class="dropdown-item" href="#">@Quantity</a><a class="dropdown-item" href="#">@Color1</a><a class="dropdown-item" href="#">@FReeSHipping</a><a class="dropdown-item" href="#">@XL</a><a class="dropdown-item" href="#">@SsizeQuantity</a><a class="dropdown-item" href="#">@GitHubLoginVerify</a>
+<a class="dropdown-item" href="#">@FReeSHipping</a><a class="dropdown-item" href="#">@XL</a><a class="dropdown-item" href="#">@Color1</a><a class="dropdown-item" href="#">@Inc</a><a class="dropdown-item" href="#">@Quantity</a><a class="dropdown-item" href="#">@SsizeQuantity</a><a class="dropdown-item" href="#">@StarCount</a><a class="dropdown-item" href="#">@GitHubLoginVerify</a>
 </ul>
 </li>
 </ul>
@@ -97,7 +97,7 @@
           <div class="test-detail">
             <p class="name">feature to test React Shopping WebSite functionality</p>
             <p class="text-sm">
-              <span>4:37:34 pm</span> / <span>00:00:52:260</span>
+              <span>11:51:10 pm</span> / <span>00:00:46:420</span>
               <span class="badge fail-bg log float-right">Fail</span>
             </p>
           </div>
@@ -106,9 +106,9 @@
 <div class="p-v-10">
 <div class="info">
 <h5 class="test-status text-fail">feature to test React Shopping WebSite functionality</h5>
-<span class='badge badge-success'>03.10.2023 4:37:34 pm</span>
-<span class='badge badge-danger'>03.10.2023 4:38:26 pm</span>
-<span class='badge badge-default'>00:00:52:260</span>
+<span class='badge badge-success'>04.02.2023 11:51:10 pm</span>
+<span class='badge badge-danger'>04.02.2023 11:51:56 pm</span>
+<span class='badge badge-default'>00:00:46:420</span>
 &middot; <span class='uri-anchor badge badge-default'>#test-id=1</span>
 <span class='badge badge-default pointer float-right ml-1 et'><i class="fa fa-chevron-down"></i></span>
 <span class='badge badge-default pointer float-right ct'><i class="fa fa-chevron-up"></i></span>
@@ -120,10 +120,10 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="2"><span class="badge log pass-bg mr-2">Pass</span>Check star rating count increases</div>
+        <div class="node" id="2"><span class="badge log fail-bg mr-2">Fail</span>Check star rating count increases</div>
       </div>
     </div>
-        <div class="collapse">
+        <div class="">
           <div class="card-body">
               <div class="step pass-bg" title="StepDefinition.StarCount.user_is_on_login_page(java.lang.String)">
                 <span>Given user is on web page "https://react-shopping-cart-67954.firebaseapp.com/"</span>
@@ -140,14 +140,47 @@
       <div>
       </div>
               </div>
-              <div class="step pass-bg" title="StepDefinition.StarCount.fetchesStarCount()">
+              <div class="step fail-bg" title="StepDefinition.StarCount.fetchesStarCount()">
                 <span>Then fetches star count</span>
       <div>
+        <textarea disabled class="code-block">org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"xpath","selector":"(//a[@class='Link--muted'])[2]"}
+  (Session info: chrome=111.0.5563.147)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.8.1', revision: '8ebccac989'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '17.0.1'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [046bc6adfbed42e06e5fff7c63f4ea9d, findElement {using=xpath, value=(//a[@class='Link--muted'])[2]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 111.0.5563.147, chrome: {chromedriverVersion: 111.0.5563.64 (c710e93d5b63..., userDataDir: C:\Program Files (x86)\scop...}, goog:chromeOptions: {debuggerAddress: localhost:58688}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:58688/devtoo..., se:cdpVersion: 111.0.5563.147, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 046bc6adfbed42e06e5fff7c63f4ea9d
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:543)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:352)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:344)
+	at org.openqa.selenium.support.pagefactory.DefaultElementLocator.findElement(DefaultElementLocator.java:70)
+	at org.openqa.selenium.support.pagefactory.internal.LocatingElementHandler.invoke(LocatingElementHandler.java:39)
+	at jdk.proxy2/jdk.proxy2.$Proxy25.click(Unknown Source)
+	at pages.StarCountPage.star_count(StarCountPage.java:56)
+	at StepDefinition.StarCount.fetchesStarCount(StarCount.java:61)
+	at ?.fetches star count(file:///C:/Users/nvijayba/git/NavneetTestCase/CucumberJava/src/test/resources/Features/login2.feature:9)
+</textarea>
+      
       </div>
               </div>
-              <div class="step pass-bg" title="StepDefinition.StarCount.userIsNavigatedToTheHomePage()">
+              <div class="step skip-bg" title="StepDefinition.StarCount.userIsNavigatedToTheHomePage()">
                 <span>Then user is navigated to the home page</span>
-      <div>
+      <div>Step skipped
       </div>
               </div>
           </div>
@@ -156,7 +189,7 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="10"><span class="badge log pass-bg mr-2">Pass</span>Check if github is taking login credentials through react shopping cart Site</div>
+        <div class="node" id="8"><span class="badge log pass-bg mr-2">Pass</span>Check if github is taking login credentials through react shopping cart Site</div>
       </div>
     </div>
         <div class="collapse">
@@ -192,14 +225,14 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="18"><span class="badge log pass-bg mr-2">Pass</span>Check quantity display matches with available products</div>
+        <div class="node" id="14"><span class="badge log pass-bg mr-2">Pass</span>Check quantity display matches with available products</div>
       </div>
     </div>
         <div class="scenario_outline collapse">
             <div class="card-body l1">
               <div class="card-header">
                 <div class="card-title outline-child">
-                  <div class="node" id="19"><span class="badge log pass-bg mr-2">Pass</span>Check quantity display matches with available products</div>
+                  <div class="node" id="15"><span class="badge log pass-bg mr-2">Pass</span>Check quantity display matches with available products</div>
                 </div>
               </div>
               <div class="card-body mt-3 collapse">
@@ -235,7 +268,7 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="27"><span class="badge log pass-bg mr-2">Pass</span>Check quantity displayed for Size S matches with available products</div>
+        <div class="node" id="21"><span class="badge log pass-bg mr-2">Pass</span>Check quantity displayed for Size S matches with available products</div>
       </div>
     </div>
         <div class="collapse">
@@ -271,13 +304,10 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="35"><span class="badge log fail-bg mr-2">Fail</span>Check whether Checkout button colour is Amber after hovering on it</div>
-          <div class="status-avatar float-right mr-4">
-            <i class="fa fa-paperclip"></i>
-          </div>
+        <div class="node" id="27"><span class="badge log pass-bg mr-2">Pass</span>Check whether Checkout button colour is Amber after hovering on it</div>
       </div>
     </div>
-        <div class="">
+        <div class="collapse">
           <div class="card-body">
               <div class="step pass-bg" title="StepDefinition.ColourVerify.user_is_on_Add_to_cart_webpage(java.lang.String)">
                 <span>Given user is on Add to cart webpage URL "https://react-shopping-cart-67954.firebaseapp.com/"</span>
@@ -289,26 +319,8 @@
       <div>
       </div>
               </div>
-              <div class="step fail-bg" title="StepDefinition.ColourVerify.chekoutButtonTurnsIntoAmberColour()">
+              <div class="step pass-bg" title="StepDefinition.ColourVerify.chekoutButtonTurnsIntoAmberColour()">
                 <span>Then Chekout button turns into amber colour</span>
-      <div>
-        <textarea disabled class="code-block">junit.framework.ComparisonFailure: expected:<rgba(2[18, 179, 2], 1)> but was:<rgba(2[08, 170, 4], 1)>
-	at junit.framework.Assert.assertEquals(Assert.java:100)
-	at junit.framework.Assert.assertEquals(Assert.java:107)
-	at StepDefinition.ColourVerify.chekoutButtonTurnsIntoAmberColour(ColourVerify.java:44)
-	at ?.Chekout button turns into amber colour(file:///C:/Users/nvijayba/git/NavneetTestCase/CucumberJava/src/test/resources/Features/login2.feature:42)
-</textarea>
-      
-      </div>
-              </div>
-              <div class="step pass-bg" title="AFTER">
-                <span>StepDefinition.ColourVerify.takeScreenshotOnFailure(io.cucumber.java.Scenario)</span>
-      <div>embedded1
-          <div class="row mb-3"><div class="col-md-3">
-<img data-featherlight='../embedded1.png' src="../embedded1.png">
-    
-    </div></div>
-</div>
       <div>
       </div>
               </div>
@@ -318,7 +330,7 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="41"><span class="badge log pass-bg mr-2">Pass</span>Check if product gets purchased for Size XL</div>
+        <div class="node" id="31"><span class="badge log pass-bg mr-2">Pass</span>Check if product gets purchased for Size XL</div>
       </div>
     </div>
         <div class="collapse">
@@ -359,7 +371,7 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="50"><span class="badge log pass-bg mr-2">Pass</span>Check if product quantity increases and decreases</div>
+        <div class="node" id="38"><span class="badge log pass-bg mr-2">Pass</span>Check if product quantity increases and decreases</div>
       </div>
     </div>
         <div class="collapse">
@@ -410,7 +422,7 @@
   <div class="card">
     <div class="card-header" role="tab">
       <div class="card-title">
-        <div class="node" id="61"><span class="badge log pass-bg mr-2">Pass</span>Check whether Cropped Stay Groovy off white and Skater Black Sweatshirt is eligible for free shipping</div>
+        <div class="node" id="47"><span class="badge log pass-bg mr-2">Pass</span>Check whether Cropped Stay Groovy off white and Skater Black Sweatshirt is eligible for free shipping</div>
       </div>
     </div>
         <div class="collapse">
@@ -463,12 +475,12 @@
 <span class="meta">
 <span class='badge log badge-danger'>1</span>
 </span>
-<p class="name">junit.framework.ComparisonFailure</p>
+<p class="name">org.openqa.selenium.NoSuchElementException</p>
 <p class="duration text-sm">1 tests</p>
 </div>
 <div class="test-contents d-none">
 <div class="info">
-<h4>junit.framework.ComparisonFailure</h4>
+<h4>org.openqa.selenium.NoSuchElementException</h4>
 <span status="fail" class='badge log badge-danger'>1 failed</span>
 </div>
 <table class='table table-sm mt-4'>
@@ -482,11 +494,11 @@
 <tbody>
 <tr class="tag-test-status" status="fail">
 <td><span class="badge log fail-bg">Fail</span></td>
-<td>16:38:08 pm</td>
+<td>23:51:18 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='38'>Then Chekout button turns into amber colour</a>
+<a href="#" class="linked" test-id='1' id='6'>Then fetches star count</a>
 <div class="">
-<span class="badge badge-default">feature to test React Shopping WebSite functionality.Check whether Checkout button colour is Amber after hovering on it.Then Chekout button turns into amber colour</span>
+<span class="badge badge-default">feature to test React Shopping WebSite functionality.Check star rating count increases.Then fetches star count</span>
 </div>
 </td>
 </tr>
@@ -515,150 +527,6 @@
 <span class="meta">
 <span class='badge log pass-bg'>1</span>
 </span>
-<p class="name">@Inc</p>
-<p class="duration text-sm">1 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>@Inc</h4>
-<span status="pass" class='badge log pass-bg'>1 passed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:38:14 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='50'>Check if product quantity increases and decreases</a>
-<div class="">
-<span class="badge badge-default">feature to test React Shopping WebSite functionality.Check if product quantity increases and decreases</span>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log pass-bg'>1</span>
-</span>
-<p class="name">@StarCount</p>
-<p class="duration text-sm">1 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>@StarCount</h4>
-<span status="pass" class='badge log pass-bg'>1 passed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:37:34 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='2'>Check star rating count increases</a>
-<div class="">
-<span class="badge badge-default">feature to test React Shopping WebSite functionality.Check star rating count increases</span>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log pass-bg'>1</span>
-</span>
-<p class="name">@Quantity</p>
-<p class="duration text-sm">1 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>@Quantity</h4>
-<span status="pass" class='badge log pass-bg'>1 passed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="pass">
-<td><span class="badge log pass-bg">Pass</span></td>
-<td>16:37:53 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='19'>Check quantity display matches with available products</a>
-<div class="">
-<span class="badge badge-default">feature to test React Shopping WebSite functionality.Check quantity display matches with available products</span>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log badge-danger'>1</span>
-</span>
-<p class="name">@Color1</p>
-<p class="duration text-sm">1 tests</p>
-</div>
-<div class="test-contents d-none">
-<div class="info">
-<h4>@Color1</h4>
-<span status="fail" class='badge log badge-danger'>1 failed</span>
-</div>
-<table class='table table-sm mt-4'>
-<thead>
-<tr>
-<th class="status-col">Status</th>
-<th class="timestamp-col">Timestamp</th>
-<th>TestName</th>
-</tr>
-</thead>
-<tbody>
-<tr class="tag-test-status" status="fail">
-<td><span class="badge log fail-bg">Fail</span></td>
-<td>16:38:03 pm</td>
-<td>
-<a href="#" class="linked" test-id='1' id='35'>Check whether Checkout button colour is Amber after hovering on it</a>
-<div class="">
-<span class="badge badge-default">feature to test React Shopping WebSite functionality.Check whether Checkout button colour is Amber after hovering on it</span>
-</div>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</li>
-<li class="test-item">
-<div class="test-detail">
-<span class="meta">
-<span class='badge log pass-bg'>1</span>
-</span>
 <p class="name">@FReeSHipping</p>
 <p class="duration text-sm">1 tests</p>
 </div>
@@ -678,9 +546,9 @@
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>16:38:19 pm</td>
+<td>23:51:51 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='61'>Check whether Cropped Stay Groovy off white and Skater Black Sweatshirt is eligible for free shipping</a>
+<a href="#" class="linked" test-id='1' id='47'>Check whether Cropped Stay Groovy off white and Skater Black Sweatshirt is eligible for free shipping</a>
 <div class="">
 <span class="badge badge-default">feature to test React Shopping WebSite functionality.Check whether Cropped Stay Groovy off white and Skater Black Sweatshirt is eligible for free shipping</span>
 </div>
@@ -714,11 +582,119 @@
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>16:38:09 pm</td>
+<td>23:51:37 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='41'>Check if product gets purchased for Size XL</a>
+<a href="#" class="linked" test-id='1' id='31'>Check if product gets purchased for Size XL</a>
 <div class="">
 <span class="badge badge-default">feature to test React Shopping WebSite functionality.Check if product gets purchased for Size XL</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@Color1</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Color1</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>23:51:32 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='27'>Check whether Checkout button colour is Amber after hovering on it</a>
+<div class="">
+<span class="badge badge-default">feature to test React Shopping WebSite functionality.Check whether Checkout button colour is Amber after hovering on it</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@Inc</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Inc</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>23:51:43 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='38'>Check if product quantity increases and decreases</a>
+<div class="">
+<span class="badge badge-default">feature to test React Shopping WebSite functionality.Check if product quantity increases and decreases</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log pass-bg'>1</span>
+</span>
+<p class="name">@Quantity</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@Quantity</h4>
+<span status="pass" class='badge log pass-bg'>1 passed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="pass">
+<td><span class="badge log pass-bg">Pass</span></td>
+<td>23:51:25 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='15'>Check quantity display matches with available products</a>
+<div class="">
+<span class="badge badge-default">feature to test React Shopping WebSite functionality.Check quantity display matches with available products</span>
 </div>
 </td>
 </tr>
@@ -750,11 +726,47 @@
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>16:37:57 pm</td>
+<td>23:51:28 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='27'>Check quantity displayed for Size S matches with available products</a>
+<a href="#" class="linked" test-id='1' id='21'>Check quantity displayed for Size S matches with available products</a>
 <div class="">
 <span class="badge badge-default">feature to test React Shopping WebSite functionality.Check quantity displayed for Size S matches with available products</span>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li class="test-item">
+<div class="test-detail">
+<span class="meta">
+<span class='badge log badge-danger'>1</span>
+</span>
+<p class="name">@StarCount</p>
+<p class="duration text-sm">1 tests</p>
+</div>
+<div class="test-contents d-none">
+<div class="info">
+<h4>@StarCount</h4>
+<span status="fail" class='badge log badge-danger'>1 failed</span>
+</div>
+<table class='table table-sm mt-4'>
+<thead>
+<tr>
+<th class="status-col">Status</th>
+<th class="timestamp-col">Timestamp</th>
+<th>TestName</th>
+</tr>
+</thead>
+<tbody>
+<tr class="tag-test-status" status="fail">
+<td><span class="badge log fail-bg">Fail</span></td>
+<td>23:51:10 pm</td>
+<td>
+<a href="#" class="linked" test-id='1' id='2'>Check star rating count increases</a>
+<div class="">
+<span class="badge badge-default">feature to test React Shopping WebSite functionality.Check star rating count increases</span>
 </div>
 </td>
 </tr>
@@ -786,9 +798,9 @@
 <tbody>
 <tr class="tag-test-status" status="pass">
 <td><span class="badge log pass-bg">Pass</span></td>
-<td>16:37:46 pm</td>
+<td>23:51:19 pm</td>
 <td>
-<a href="#" class="linked" test-id='1' id='10'>Check if github is taking login credentials through react shopping cart Site</a>
+<a href="#" class="linked" test-id='1' id='8'>Check if github is taking login credentials through react shopping cart Site</a>
 <div class="">
 <span class="badge badge-default">feature to test React Shopping WebSite functionality.Check if github is taking login credentials through react shopping cart Site</span>
 </div>
@@ -811,13 +823,13 @@
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Started</p>
-<h3>Mar 10, 2023 04:37:33 pm</h3>
+<h3>Apr 2, 2023 11:51:09 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
 <div class="card"><div class="card-body">
 <p class="m-b-0">Ended</p>
-<h3>Mar 10, 2023 04:38:26 pm</h3>
+<h3>Apr 2, 2023 11:51:56 pm</h3>
 </div></div>
 </div>
 <div class="col-md-3">
@@ -888,10 +900,10 @@
 </div>
 </div>
 <div class="card-footer">
-<div><small data-tooltip='97%'><b>41</b> steps passed</small></div>
+<div><small data-tooltip='95%'><b>39</b> steps passed</small></div>
 <div>
 <small data-tooltip='2%'><b>1</b> steps failed,
-<b>0</b> skipped, <b data-tooltip='%'>0</b> others
+<b>1</b> skipped, <b data-tooltip='%'>0</b> others
 </small>
 </div>
 </div>
@@ -907,7 +919,7 @@
 </div></div>
 <script>
 var timeline = {
-"feature to test React Shopping WebSite functionality":52.26
+"feature to test React Shopping WebSite functionality":46.42
 };
 </script>
 <div class="row">
@@ -916,38 +928,6 @@ var timeline = {
 <div class="card-header"><p>Tags</p></div>
 <div class="card-body pb-0 pt-0"><table class="table table-sm table-bordered">
 <thead><tr class="bg-gray"><th>Name</th><th>Passed</th><th>Failed</th><th>Skipped</th><th>Others</th><th>Passed %</th></tr></thead><tbody>
-<tr>
-<td>@Inc</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
-</tr>
-<tr>
-<td>@StarCount</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
-</tr>
-<tr>
-<td>@Quantity</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0</td>
-<td>100%</td>
-</tr>
-<tr>
-<td>@Color1</td>
-<td>0</td>
-<td>1</td>
-<td>0</td>
-<td>0</td>
-<td>0%</td>
-</tr>
 <tr>
 <td>@FReeSHipping</td>
 <td>1</td>
@@ -965,12 +945,44 @@ var timeline = {
 <td>100%</td>
 </tr>
 <tr>
+<td>@Color1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@Inc</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
+<td>@Quantity</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>100%</td>
+</tr>
+<tr>
 <td>@SsizeQuantity</td>
 <td>1</td>
 <td>0</td>
 <td>0</td>
 <td>0</td>
 <td>100%</td>
+</tr>
+<tr>
+<td>@StarCount</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0%</td>
 </tr>
 <tr>
 <td>@GitHubLoginVerify</td>
@@ -1000,10 +1012,10 @@ warningChild: 0,
 skipChild: 0,
 infoChild: 0,
 grandChildCount: 5,
-passGrandChild: 41,
+passGrandChild: 39,
 failGrandChild: 1,
 warningGrandChild: 0,
-skipGrandChild: 0,
+skipGrandChild: 1,
 infoGrandChild: 0,
 eventsCount: 5,
 };

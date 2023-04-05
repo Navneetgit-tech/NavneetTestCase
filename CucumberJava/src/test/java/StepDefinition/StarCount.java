@@ -7,6 +7,8 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -25,7 +27,12 @@ public class StarCount {
 	@Given("user is on web page {string}")
 	public void user_is_on_login_page(String url) {
 		System.out.println("Inside Step - user is on login page");
-		driver= new ChromeDriver();
+		ChromeOptions ops = new ChromeOptions();
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\nvijayba\\git\\NavneetTestCase\\CucumberJava\\driver1\\chromedriver.exe");
+		ops.addArguments("--remote-allow-origins=*");
+		driver= new ChromeDriver(ops);
+		
+		
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
 		driver.get(url);

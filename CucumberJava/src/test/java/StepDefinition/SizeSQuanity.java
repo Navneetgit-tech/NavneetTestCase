@@ -9,6 +9,7 @@ import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
@@ -25,7 +26,10 @@ public class SizeSQuanity {
 	SizeSQuantityPage ssq;
 	@Given("Clicks on size S displayed on {string} webpage")
 	public void clicks_on_size_s(String url){
-		driver=new ChromeDriver();
+		ChromeOptions ops = new ChromeOptions();
+		System.setProperty("webdriver.chrome.driver","C:\\Users\\nvijayba\\git\\NavneetTestCase\\CucumberJava\\driver1\\chromedriver.exe");
+		ops.addArguments("--remote-allow-origins=*");
+		driver= new ChromeDriver(ops);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
 		driver.get(url);

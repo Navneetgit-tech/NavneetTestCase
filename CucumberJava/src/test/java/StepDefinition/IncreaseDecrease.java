@@ -6,6 +6,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 
 import io.cucumber.java.After;
 import io.cucumber.java.en.And;
@@ -19,7 +20,10 @@ IncreaseDecreasePage incdec;
 
 @Given("user opens main webpage {string}")
 public void user_opens_main_webpage(String url) {
-	driver= new ChromeDriver();
+	ChromeOptions ops = new ChromeOptions();
+	System.setProperty("webdriver.chrome.driver","C:\\Users\\nvijayba\\git\\NavneetTestCase\\CucumberJava\\driver1\\chromedriver.exe");
+	ops.addArguments("--remote-allow-origins=*");
+	driver= new ChromeDriver(ops);
 	driver.manage().window().maximize();
 	driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(1));
 	driver.get(url);
