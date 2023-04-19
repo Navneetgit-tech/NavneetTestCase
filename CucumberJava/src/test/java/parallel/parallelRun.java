@@ -13,8 +13,6 @@ glue= {"parallel"},
 monochrome=true ,plugin= {"pretty",
 		"com.aventstack.extentreports.cucumber.adapter.ExtentCucumberAdapter:",
 		"timeline:test-output-thread/"}
-//tags="@StarCount"
-//		,tags="@StarCount or @Quantity and not @XL"
 )
 
 public class parallelRun extends AbstractTestNGCucumberTests {
