@@ -1,7 +1,7 @@
 # NavneetTestCase
 <br>
-React Shopping Cart Test
-I automated a shopping cart website using Selenium tool, Cucumber BDD framework and java programming language.
+React Shopping Cart Application,
+is automated using Selenium tool, Cucumber BDD framework and java programming language.
 This website automates several functionalities of web pages which includes:
 1)testing of drop down button
 2)checking the count of star ratings
